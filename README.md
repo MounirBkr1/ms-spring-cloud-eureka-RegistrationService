@@ -54,3 +54,5 @@ microservice d'enregistrement spring cloud eureka
       
     c-bootstrap.properties:
         eureka.client.serviceUrl.defaultZone= http://localhost:8761/eureka/
+        eureka.client.register-with-eureka=false
+        eureka.client.fetch-registry=false
