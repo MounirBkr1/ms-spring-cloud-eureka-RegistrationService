@@ -56,3 +56,17 @@ microservice d'enregistrement spring cloud eureka
         eureka.client.serviceUrl.defaultZone= http://localhost:8761/eureka/
         eureka.client.register-with-eureka=false
         eureka.client.fetch-registry=false
+    d-config
+         @Configuration
+         public class invoiceConfig {
+             @Bean
+             /*
+                 avoid confusion in case there are several instances of a microservice
+                 if 2 instance is active,"httprequest"  wil call the first instance in first time
+                 if smae "httprequest" called, the second instance of this microservice will be called
+              */
+             @LoadBalanced
+             public RestTemplate restTemplate(){
+                 return new RestTemplate();
+             }
+          }
