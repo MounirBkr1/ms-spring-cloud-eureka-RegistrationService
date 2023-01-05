@@ -51,3 +51,6 @@ microservice d'enregistrement spring cloud eureka
     b-main: 
        @EnableDiscoveryClient
        //@EnableEurekaClient
+      
+    c-bootstrap.properties:
+        eureka.client.serviceUrl.defaultZone= http://localhost:8761/eureka/
